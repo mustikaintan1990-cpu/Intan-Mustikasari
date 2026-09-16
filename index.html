@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intan Mustikasari, S.Pd. - Portofolio Guru BK</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLE SYSTEM --- */
+        :root {
+            --primary: #0284C7;       /* Soft Blue */
+            --primary-hover: #0369A1;
+            --secondary: #10B981;     /* Sage Green */
+            --bg-light: #FAF5FF;      /* Warm Light Background */
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --radius: 16px;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #059669;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: var(--white);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(180deg, #E0F2FE 0%, var(--bg-light) 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid var(--white);
+            box-shadow: var(--card-shadow);
+        }
+
+        /* --- PROFIL SECTION --- */
+        .profil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #E0F2FE;
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- KONTEN EDUKASI --- */
+        .filter-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 8px 18px;
+            background-color: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tag.active, .tag:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+
+        .edukasi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- PENGALAMAN & PRESTASI (TIMELINE) --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--primary);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        /* --- MEDIA PEMBELAJARAN --- */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .media-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .media-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .media-card a {
+            margin-top: 15px;
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- KONTAK --- */
+        .kontak-wrapper {
+            display: flex;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .kontak-info, .kontak-form {
+            flex: 1;
+        }
+
+        .kontak-info div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .kontak-info i {
+            width: 40px;
+            height: 40px;
+            background-color: #ECFDF5;
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--white);
+            text-align: center;
+            padding: 25px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .kontak-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Intan Mustikasari</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#edukasi">Konten Edukasi</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+                <li><a href="#prestasi">Prestasi & Karya</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEROSECTION / BERANDA -->
+    <section class="hero" id="beranda">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Selamat Datang! 👋</h2>
+                <h1>Intan Mustikasari, S.Pd.</h1>
+                <p>Guru Bimbingan dan Konseling di <strong>SMPN 2 Kwadungan, Ngawi</strong>. Siap mendampingi dan mendukung tumbuh kembang, potensi, serta kesehatan mental siswa.</p>
+                <a href="#kontak" class="btn">Konsultasi Siswa</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/320x320/0284C7/FFFFFF?text=Foto+Guru+BK" alt="Intan Mustikasari">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section class="section" id="profil">
+        <div class="container">
+            <h2 class="section-title">Profil Pengajar</h2>
+            <p class="section-subtitle">Komitmen dalam memberikan pelayanan Bimbingan Konseling yang ramah dan inklusif.</p>
+            <div class="profil-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Pendidikan</h3>
+                    <p>Lulusan Sarjana Pendidikan Bimbingan dan Konseling dengan fokus pada konseling remaja dan pengembangan karakter.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Visi Konseling</h3>
+                    <p>Mewujudkan ruang aman bagi siswa untuk mengeksplorasi potensi diri, mengatasi hambatan, dan merencanakan masa depan.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-school"></i></div>
+                    <h3>Instansi</h3>
+                    <p>Aktif mengabdi sebagai Guru BK di SMPN 2 Kwadungan, Kabupaten Ngawi, Jawa Timur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTEN EDUKASI -->
+    <section class="section" id="edukasi" style="background-color: #F1F5F9;">
+        <div class="container">
+            <h2 class="section-title">Konten Edukasi BK</h2>
+            <p class="section-subtitle">Materi bimbingan pilihan untuk pengembangan diri siswa.</p>
+            
+            <div class="filter-tags">
+                <span class="tag active">Semua</span>
+                <span class="tag">Pengembangan Diri</span>
+                <span class="tag">Belajar</span>
+                <span class="tag">Karier</span>
+                <span class="tag">Sosial</span>
+            </div>
+
+            <div class="edukasi-grid">
+                <div class="card">
+                    <h3>Cara Mengatasi Stres Belajar</h3>
+                    <p>Tips praktis menjaga kesehatan mental saat menghadapi ujian sekolah...</p>
+                </div>
+                <div class="card">
+                    <h3>Mengenali Minat & Bakat</h3>
+                    <p>Langkah sederhana menentukan pilihan sekolah lanjutan setelah lulus SMP...</p>
+                </div>
+                <div class="card">
+                    <h3>Membangun Komunikasi Efektif</h3>
+                    <p>Panduan berinteraksi positif dengan teman sebaya dan lingkungan sekolah...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section class="section" id="pengalaman">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Kerja</h2>
+            <p class="section-subtitle">Jejak langkah pengabdian di dunia pendidikan.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2020 - Sekarang</span>
+                    <h3 class="timeline-title">Guru Bimbingan dan Konseling</h3>
+                    <p>SMPN 2 Kwadungan, Ngawi. Bertanggung jawab atas bimbingan pribadi, sosial, belajar, dan karier siswa.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2021 - Sekarang</span>
+                    <h3 class="timeline-title">Koordinator Program Character Building</h3>
+                    <p>Menyusun dan mengimplementasikan kegiatan pengembangan karakter serta pencegahan perundungan di sekolah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESTASI DAN KARYA -->
+    <section class="section" id="prestasi" style="background-color: #F1F5F9;">
+        <div class="container">
+            <h2 class="section-title">Prestasi & Karya</h2>
+            <p class="section-subtitle">Capaian profesional dan inovasi bimbingan.</p>
+            <div class="profil-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-award"></i></div>
+                    <h3>Penulis Modul BK Interaktif</h3>
+                    <p>Menyusun panduan bimbingan kelompok berbasis permainan edukatif untuk siswa SMP (2023).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Peserta Terbaik Pelatihan BK</h3>
+                    <p>Penghargaan dalam Pelatihan Peningkatan Kompetensi Guru BK tingkat Kabupaten Ngawi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA PEMBELAJARAN -->
+    <section class="section" id="media">
+        <div class="container">
+            <h2 class="section-title">Media Pembelajaran</h2>
+            <p class="section-subtitle">Materi dan lembar kerja yang dapat diunduh secara gratis.</p>
+            <div class="media-grid">
+                <div class="media-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>LKPD Pohon Karir</h3>
+                    <p>Lembar kerja siswa untuk memetakan cita-cita.</p>
+                    <a href="#"><i class="fas fa-download"></i> Unduh PDF</a>
+                </div>
+                <div class="media-card">
+                    <i class="fas fa-file-powerpoint"></i>
+                    <h3>Slide Anti-Bullying</h3>
+                    <p>Materi presentasi sosialisasi cegah perundungan.</p>
+                    <a href="#"><i class="fas fa-download"></i> Unduh PPT</a>
+                </div>
+                <div class="media-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Briefing UN</h3>
+                    <p>Panduan kesiapan mental menghadapi ujian.</p>
+                    <a href="#"><i class="fas fa-external-link-alt"></i> Tonton Video</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="section" id="kontak" style="background-color: #F1F5F9;">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p class="section-subtitle">Layanan konsultasi atau diskusi seputar BK.</p>
+            <div class="kontak-wrapper">
+                <div class="kontak-info">
+                    <h3>Ruang Konseling Digital</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">Silakan hubungi melalui kontak di bawah atau kirimkan pesan langsung.</p>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>SMPN 2 Kwadungan, Kabupaten Ngawi</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>intan.mustikasari@email.com</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                </div>
+                <div class="kontak-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email / Kontak WhatsApp" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Tuliskan pesan atau jadwal konsultasi..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Intan Mustikasari, S.Pd. - SMPN 2 Kwadungan, Ngawi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT UNTUK MENU MOBILE -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
